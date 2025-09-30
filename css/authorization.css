@@ -1,0 +1,279 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-section {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 0;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth-form {
+  padding: 40px;
+  border-radius: 30px;
+  max-width: 435px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.auth-title {
+  color: var(--black-color--);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--black-color--);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: rgb(146, 146, 146);
+}
+
+.input-group input:focus {
+  border-color: var(--black-color--);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 15px;
+  background: var(--green-color--);
+  color: var(--white-color--);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.auth-button:hover {
+  background: #02c065;
+  transform: translateY(-1px);
+}
+
+/* Стили для блока с дополнительными ссылками */
+.auth-links {
+  margin: 15px 0;
+}
+
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.forgot-password {
+  color: var(--black-color--);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: var(--green-color--);
+  text-decoration: underline;
+}
+
+.auth-register {
+  color: var(--black-color--);
+  font-size: 14px;
+}
+
+.auth-register a {
+  color: var(--green-color--);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.auth-register a:hover {
+  color: #02c065;
+  text-decoration: underline;
+}
+
+.auth-agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.auth-agreement input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.auth-agreement label {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Стили для альтернативного компактного варианта */
+.auth-footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  max-width: 435px;
+  width: 100%;
+}
+
+.auth-footer p {
+  margin: 0;
+  color: var(--black-color--);
+  font-size: 14px;
+}
+
+.auth-footer a {
+  color: var(--green-color--);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Валидация */
+.input-group input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #ff6b6b;
+}
+
+.auth-agreement input[type="checkbox"]:required:not(:checked) + label {
+  color: rgb(146, 146, 146);
+}
+
+/* Анимация */
+.auth-form {
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .auth-form {
+    padding: 30px 25px;
+    margin: 0 auto 20px;
+  }
+  
+  .auth-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  
+  .input-group input {
+    padding: 12px;
+  }
+  
+  .auth-button {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form {
+    padding: 25px 20px;
+  }
+  
+  .auth-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .auth-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .auth-options {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .auth-agreement label {
+    font-size: 11px;
+  }
+  
+  .auth-footer {
+    padding: 12px;
+  }
+  
+  .auth-footer p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .auth-form {
+    padding: 20px 15px;
+  }
+  
+  .auth-title {
+    font-size: 18px;
+  }
+  
+  .auth-register,
+  .forgot-password {
+    font-size: 13px;
+  }
+}

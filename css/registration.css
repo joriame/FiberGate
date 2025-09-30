@@ -1,0 +1,275 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.register-section {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 0;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register-form {
+  padding: 40px;
+  border-radius: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.register-title {
+  color: var(--black-color--);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Строка с двумя полями */
+.input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-row .input-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--black-color--);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: rgb(146, 146, 146);
+}
+
+.input-group input:focus {
+  border-color: var(--black-color--);
+}
+
+/* Стили для невалидных полей */
+.input-group input:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: #ff6b6b;
+}
+
+/* Особый стиль для несовпадающих паролей */
+.input-group input.password-mismatch {
+  border-color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.05);
+}
+
+.register-button {
+  width: 100%;
+  padding: 15px;
+  background: var(--green-color--);
+  color: var(--white-color--);
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.register-button:hover {
+  background: #02c065;
+  transform: translateY(-1px);
+}
+
+/* Стили для блока с дополнительными ссылками */
+.register-links {
+  margin: 15px 0;
+}
+
+.register-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-login {
+  color: var(--black-color--);
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-login a {
+  color: var(--green-color--);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.register-login a:hover {
+  color: #02c065;
+  text-decoration: underline;
+}
+
+.register-agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.register-agreement input[type="checkbox"] {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.register-agreement label {
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.agreement-link {
+  color: var(--green-color--);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.agreement-link:hover {
+  color: #02c065;
+  text-decoration: underline;
+}
+
+.register-agreement input[type="checkbox"]:required:not(:checked) + label {
+  color: rgb(146, 146, 146);
+}
+
+/* Анимация */
+.register-form {
+  animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .register-form {
+    padding: 30px 25px;
+    margin: 0 auto 20px;
+    max-width: 435px;
+  }
+  
+  .register-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+  
+  .input-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .input-group input {
+    padding: 12px;
+  }
+  
+  .register-button {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-form {
+    padding: 25px 20px;
+  }
+  
+  .register-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .register-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .register-login {
+    font-size: 13px;
+  }
+  
+  .register-agreement label {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .register-form {
+    padding: 20px 15px;
+  }
+  
+  .register-title {
+    font-size: 18px;
+  }
+  
+  .register-login {
+    font-size: 12px;
+  }
+}
+
+/* Стили для сообщения об ошибке валидации */
+.error-message {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.input-group input:invalid:not(:focus):not(:placeholder-shown) + .error-message {
+  display: block;
+}

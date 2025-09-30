@@ -1,0 +1,215 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Main content styles for the support page */
+.support-main {
+    padding: 40px 0;
+}
+
+.support-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.support-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--black-color--);
+    margin-bottom: 20px;
+}
+
+.support-subtitle {
+    font-size: 18px;
+    color: var(--gray-color--);
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.support-contact-main {
+    /* background-color: var(--blue-color--); */ /* Синий фон убран */
+    color: var(--black-color--); /* Цвет текста изменен на черный */
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.support-contact-main p:first-child {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.support-contact-main a {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--blue-color--); /* Цвет ссылки изменен на синий */
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.support-contact-info {
+    font-size: 14px;
+    color: var(--gray-color--); /* Цвет текста изменен на серый */
+    opacity: 0.9;
+}
+
+.support-email-info {
+    font-size: 16px;
+    color: var(--gray-color--);
+    margin-bottom: 40px;
+}
+
+.support-email-info a {
+    color: var(--blue-color--);
+    text-decoration: underline;
+}
+
+.top-requests-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--black-color--);
+    margin-bottom: 30px;
+}
+
+.top-requests-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 40px;
+}
+
+.request-card {
+    background-color: var(--white-color--);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    border-top: 5px solid transparent; /* Добавлено для консистентности */
+}
+
+/* Добавлены цветные верхние границы для карточек "Топ запросов" */
+.request-card:nth-child(1) { border-top-color: var(--yellow-color--); }
+.request-card:nth-child(2) { border-top-color: var(--blue-color--); }
+.request-card:nth-child(3) { border-top-color: var(--red-color--); }
+.request-card:nth-child(4) { border-top-color: var(--yellow-color--); }
+.request-card:nth-child(5) { border-top-color: var(--blue-color--); }
+.request-card:nth-child(6) { border-top-color: var(--red-color--); }
+
+
+.request-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--black-color--);
+    margin-bottom: 10px;
+}
+
+.request-card p {
+    font-size: 16px;
+    color: var(--gray-color--);
+}
+
+.not-found-answer {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.not-found-answer h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--black-color--);
+    margin-bottom: 30px;
+}
+
+.contact-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.contact-option {
+    background-color: var(--white-color--);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid transparent; /* Добавлено для консистентности */
+}
+
+/* Добавлены цветные верхние границы для карточек "Свяжитесь с нами" */
+.contact-option:nth-child(1) { border-top-color: var(--yellow-color--); }
+.contact-option:nth-child(2) { border-top-color: var(--blue-color--); }
+.contact-option:nth-child(3) { border-top-color: var(--red-color--); }
+
+
+.contact-option h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--black-color--);
+    margin-bottom: 10px;
+}
+
+.contact-option p {
+    font-size: 16px;
+    color: var(--gray-color--);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .top-requests-grid,
+    .contact-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .support-title {
+        font-size: 36px;
+    }
+
+    .support-subtitle {
+        font-size: 16px;
+    }
+
+    .support-contact-main a {
+        font-size: 28px;
+    }
+
+    .top-requests-grid,
+    .contact-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .support-title {
+        font-size: 28px;
+    }
+
+    .support-subtitle {
+        font-size: 14px;
+    }
+
+    .support-contact-main {
+        padding: 20px;
+    }
+
+    .support-contact-main a {
+        font-size: 22px;
+    }
+
+    .request-card,
+    .contact-option {
+        padding: 20px;
+    }
+}
